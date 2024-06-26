@@ -24,4 +24,7 @@ const getGamesbyId = (id: number | null, search: string) =>
 			search
 	);
 
-export { getGenresList, getAllGames, getGamesbyId };
+const getGamedetails = (id: number) => {
+	return axiosCreate.get(`/games/${id}?key=${process.env.NEXT_PUBLIC_API_KEY}`);
+};
+export { getGenresList, getAllGames, getGamesbyId, getGamedetails };
